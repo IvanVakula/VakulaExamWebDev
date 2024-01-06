@@ -1,18 +1,108 @@
 /* Стили для мобильных устройств */
-@media (max-width: 600px) {  /* или другой размер, подходящий для вашего дизайна */
+@media (max-width: 600px) {
+
+    /* или другой размер, подходящий для вашего дизайна */
     .table-responsive {
-        margin: 0;  /* убрать отступы вокруг таблицы */
+        margin: 0;
+        /* убрать отступы вокруг таблицы */
         padding: 0;
-        
-    }
-    
-    .table {
-        font-size: 12px;  /* уменьшить размер шрифта */
+
     }
 
-    .table th, .table td {
-        padding: 5px;  /* уменьшить отступы в ячейках */
+    .table {
+        font-size: 11px;
+        /* уменьшить размер шрифта */
+    }
+
+    .table th,
+    .table td {
+        padding: 5px;
+        /* уменьшить отступы в ячейках */
     }
 
     /* Дополнительные стили для уменьшения размера элементов таблицы */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d5fae3;
+}
+
+.navbar-brand {
+    /* более специфичный селектор */
+    background-color: #ce499d;
+    /* Фуксия */
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+}
+
+.footer {
+    background-color: grey;
+    color: white;
+}
+
+.card {
+    background-color: #65fdc3;
+    text-align: center;
+    /* Светло-серый */
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Helvetica', sans-serif;
+    color: #8B4513;
+    /* Коричневый */
+}
+
+table {
+    border-radius: 10px;
+    /* Задает радиус скругления */
+    overflow: hidden;
+    /* Скрывает содержимое, выходящее за пределы скругления */
+}
+
+
+table th {
+    background-color: rgb(255, 134, 134) !important;
+    /* Цвет фона для заголовков таблицы */
+    text-align: center;
+    /* Выравнивание текста в заголовках */
+    vertical-align: middle;
+}
+
+table td {
+    background-color: rgb(252, 200, 200) !important;
+    /* Цвет фона для заголовков таблицы */
+    text-align: center;
+    /* Выравнивание текста в заголовках */
+    vertical-align: middle;
+}
+
+button {
+    height: 42px;
+	border: none;
+	background: #913a99;
+	color: #f2f2f2;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+	transition: all 500ms ease; 
+}
+button:before {
+	content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 42px;
+	background: rgba(0, 255, 21, 0.493);
+	border-radius: 5px;
+	transition: all 1s ease;
+}
+button:hover:before {
+	width: 100%;
 }
