@@ -1,107 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
+    <!-- Мета-теги -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KremlinWalker</title>
-     <!-- Подключение Bootstrap CSS для стилей -->
+
+    <!-- Подключение Bootstrap CSS для стилей -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="code.js"></script>
-        <link rel="stylesheet" href="style.css">
+
+    <!-- Подключение внешних стилей и скриптов -->
+    <script src="codeMP.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Подключение Bootstrap JavaScript для интерактивных компонентов -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-        <!-- Навигационная панель -->
-        <div class="navnav">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <!-- Классы Bootstrap для стилизации навигационной панели -->
-        <a class="navbar-brand" href="#">
-            Московский переулок
-            <br>
-            <!-- Подзаголовок в навигационной панели -->
-            <span class="fs-6 text-muted">Экскурсии по Москве</span>
-            <!-- Подзаголовок с классами Bootstrap для размера шрифта и цвета -->
-        </a>
-        <!-- Кнопка для мобильных устройств -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"        
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Контейнер для элементов меню, которые скрываются на мобильных устройствах -->
-
-        <!-- Ссылки и элементы меню в навигационной панели -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">На главную<span class="sr-only"> (Текущая)</span></a>
-                    </li>
-                </ul>
+    <!-- Навигационная панель -->
+    <div class="navnav">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <a class="navbar-brand" href="#">
+                <!-- Логотип и подзаголовок -->
+                Московский переулок
+                <br>
+                <span class="fs-6 text-muted">Экскурсии по Москве</span>
+            </a>
+            <!-- Кнопка для мобильных устройств -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Элементы меню -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Ссылки на разделы -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">На главную<span class="sr-only"> (Текущая)</span></a>
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#Onas">О нас</a>
                     </li>
-            </ul>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="#whyus">Почему мы?</a>
                     </li>
-            </ul>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#tableroutes">Список маршрутов</a>
-                </li>
-        </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Личный кабинет</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#tableroutes">Список маршрутов</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <!-- Ссылка на личный кабинет -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="Lk.html">Личный кабинет</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
     <!-- Основной контент страницы -->
     <div class="container mt-3">
-        <!-- Контейнер с отступом сверху (mt-3) -->
+        <!-- Верхний блок с изображением и текстовым блоком -->
         <div class="row">
+            <!-- Колонка с изображением -->
             <div class="col-md-6">
-                <!-- Колонка сетки для средних устройств -->
                 <img src="NGAM.gif" alt="Описание изображения" class="img-fluid">
-                <!-- Место для изображения -->
             </div>
+            <!-- Колонка с текстовым блоком -->
             <div class="col-md-6">
-                <!-- Текстовый блок -->
                 <div class="text-block" id="Onas">
                     <h4>Немного о нас</h4>
-                    <p>Москва – город для прогулок!
-
-                        Хотите в этом убедиться?
-
-                        Общество пеших прогулок KremlinWalker – это множество авторских
-                        экскурсий по Москве от известных москвоведов! Cтарейшее и наиболее авторитетное московское
-                        агентство, проводящее пешеходные экскурсии по Москве. Гиды KremlinWalker- люди разных профессий,
-                        влюбленные в Москву, и готовые делиться своими знаниями и увлеченностью с москвичами и гостями
-                        нашего города.
-                        Каждая наша экскурсия по Москве концентрируется на определенном уголке города или теме,
-                        раскрывая богатство его истории, культуры и архитектуры. Наши гиды, искренне влюбленные в
-                        Москву, с удовольствием поделятся своим очень личным рассказом о городе. Вы можете быть
-                        москвичом, прожившим здесь всю жизнь, или гостем, решающим, где погулять в Москве — приходите на
-                        нашу экскурсию по Москве</p>
+                    <p>Москва – город для прогулок! Хотите в этом убедиться? Общество пеших прогулок KremlinWalker –
+                        это множество авторских экскурсий по Москве от известных москвоведов! Cтарейшее и наиболее
+                        авторитетное московское агентство, проводящее пешеходные экскурсии по Москве. Гиды KremlinWalker -
+                        люди разных профессий, влюбленные в Москву, и готовые делиться своими знаниями и увлеченностью с
+                        москвичами и гостями нашего города. Каждая наша экскурсия по Москве концентрируется на
+                        определенном уголке города или теме, раскрывая богатство его истории, культуры и архитектуры. Наши
+                        гиды, искренне влюбленные в Москву, с удовольствием поделятся своим очень личным рассказом о
+                        городе. Вы можете быть москвичом, прожившим здесь всю жизнь, или гостем, решающим, где погулять
+                        в Москве — приходите на нашу экскурсию по Москве</p>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Блок с карточками -->
     <div class="container mt-2">
         <h2 class="text-center" id="whyus">Почему мы?</h2>
         <div class="row">
-            <!-- Ряд для сетки Bootstrap -->
-
             <!-- Карточка 1 -->
             <div class="col-md-3 col-sm-6 mb-4" id="kartochka">
                 <div class="card">
@@ -113,7 +100,6 @@
             </div>
             <!-- Карточка 2 -->
             <div class="col-md-3 col-sm-6 mb-4">
-                <!-- Колонка сетки для средних и малых устройств с отступом снизу -->
                 <div class="card">
                     <img src="1.jpg" class="card-img-top" alt="Изображение">
                     <div class="card-body">
@@ -141,9 +127,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Таблица маршрутов -->
     <div class="container table-responsive" id="tableroutes">
         <h2 class="text-center mt-5">Список пешеходных маршрутов</h2>
         <table class="table table-sm">
+            <!-- Заголовок таблицы -->
             <thead>
                 <tr>
                     <th scope="col" class="col-1 col-xl-1">Название</th>
@@ -152,30 +141,40 @@
                     <th scope="col" class="col-1 col-xl-1"></th>
                 </tr>
             </thead>
+            <!-- Тело таблицы (заполняется динамически с помощью JavaScript) -->
             <tbody id="routes-table-body">
             </tbody>
         </table>
-    </div> 
+    </div>
+
+    <!-- Подвал страницы -->
     <footer class="footer">
         <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-                &copy KremlinWalker
-                <p> Все права защищены</p>
+            <div class="row">
+                <!-- Логотип и копирайт -->
+                <div class="col-md-4">
+                    &copy KremlinWalker
+                    <p> Все права защищены</p>
+                </div>
+                <!-- Контактная информация -->
+                <div class="col-md-4">
+                    <h5>Как с нами связаться?</h5>
+                    <p>Телефон: +7 (123) 456-7890</p>
+                    <p>Email: KremlinWalker@example.ru</p>
+                </div>
+                <!-- Адрес -->
+                <div class="col-md-4">
+                    <h5>Адрес</h5>
+                    <p>Москва, Улица Пушкина, Дом 5</p>
+                </div>
             </div>
-            <div class="col-md-4">
-              <h5>Как с нами связаться?</h5>
-              <p>Телефон: +7 (123) 456-7890</p>
-              <p>Email: KremlinWalker@example.ru</p>
-            </div>
-            <div class="col-md-4">
-              <h5>Адрес</h5>
-              <p>Москва, Улица Пушкина, Дом 5</p>
-            </div>
-          </div>
         </div>
-      </footer>
-
     </footer>
+
+    <!-- Подключение Bootstrap JavaScript для интерактивных компонентов -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
