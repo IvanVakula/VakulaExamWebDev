@@ -6,13 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KremlinWalker</title>
-
+    <link rel="icon" href="ico.png" type="image/x-icon">
     <!-- Подключение Bootstrap CSS для стилей -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- Подключение внешних стилей и скриптов -->
-    <script src="codeMP.js"></script>
+    <!-- Подключение внешних стилей  -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,11 +19,15 @@
     <!-- Навигационная панель -->
     <div class="navnav">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <a class="navbar-brand" href="#">
-                <!-- Логотип и подзаголовок -->
-                Московский переулок
-                <br>
-                <span class="fs-6 text-muted">Экскурсии по Москве</span>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div>
+                    <img src="logo.png" alt="Логотип" class="logo img-fluid">
+                </div>
+                <div class="ms-1">
+                    KremlinWalker
+                    <br>
+                    <span class="fs-6 text-muted">Экскурсии по Москве</span>
+                </div>
             </a>
             <!-- Кнопка для мобильных устройств -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -59,6 +62,11 @@
         </nav>
     </div>
 
+    <div id="alert-container" class="">
+        <!-- Контейнер для добавления Alert'ов -->
+    </div>
+
+
     <!-- Основной контент страницы -->
     <div class="container mt-3">
         <!-- Верхний блок с изображением и текстовым блоком -->
@@ -73,10 +81,12 @@
                     <h4>Немного о нас</h4>
                     <p>Москва – город для прогулок! Хотите в этом убедиться? Общество пеших прогулок KremlinWalker –
                         это множество авторских экскурсий по Москве от известных москвоведов! Cтарейшее и наиболее
-                        авторитетное московское агентство, проводящее пешеходные экскурсии по Москве. Гиды KremlinWalker -
+                        авторитетное московское агентство, проводящее пешеходные экскурсии по Москве. Гиды KremlinWalker
+                        -
                         люди разных профессий, влюбленные в Москву, и готовые делиться своими знаниями и увлеченностью с
                         москвичами и гостями нашего города. Каждая наша экскурсия по Москве концентрируется на
-                        определенном уголке города или теме, раскрывая богатство его истории, культуры и архитектуры. Наши
+                        определенном уголке города или теме, раскрывая богатство его истории, культуры и архитектуры.
+                        Наши
                         гиды, искренне влюбленные в Москву, с удовольствием поделятся своим очень личным рассказом о
                         городе. Вы можете быть москвичом, прожившим здесь всю жизнь, или гостем, решающим, где погулять
                         в Москве — приходите на нашу экскурсию по Москве</p>
@@ -145,7 +155,32 @@
             <tbody id="routes-table-body">
             </tbody>
         </table>
+        <nav aria-label="Навигация по страницам">
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
     </div>
+
+    <div class="container table-responsive" id="guides-list">
+        <h2 class="text-center mt-5" id="guides-text">Доступные гиды по маршруту</h2>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th scope="col"></th> <!-- Фотография гида -->
+                    <th scope="col">ФИО</th>
+                    <th scope="col">Языки</th>
+                    <th scope="col">Опыт работы</th>
+                    <th scope="col">Стоимость услуг в час</th>
+                    <th scope="col"></th> <!-- Кнопка "Выбрать" -->
+                </tr>
+            </thead>
+            <tbody id="guides-table-body"> </tbody>
+        </table>
+    </div>
+
+    <div class="container mt-1 px-5 text-center py-4" id="buyContainer"></div>
+
+
+
 
     <!-- Подвал страницы -->
     <footer class="footer">
@@ -153,7 +188,7 @@
             <div class="row">
                 <!-- Логотип и копирайт -->
                 <div class="col-md-4">
-                    &copy KremlinWalker
+                    &copy; KremlinWalker
                     <p> Все права защищены</p>
                 </div>
                 <!-- Контактная информация -->
@@ -171,10 +206,94 @@
         </div>
     </footer>
 
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="OrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="OrderModalLabel">Оформление заявки</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- ФИО гида -->
+                    <div class="mb-3 row">
+                        <label for="guideName" class="col-sm-3 col-form-label">ФИО гида:</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="guideName" value="">
+                        </div>
+                    </div>
+                    <!-- Название маршрута -->
+                    <div class="mb-3 row">
+                        <label for="routeName" class="col-sm-3 col-form-label">Маршрут:</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="routeName" value="">
+                        </div>
+                    </div>
+                    <!-- Дата экскурсии -->
+                    <div class="mb-3">
+                        <label for="dateInput" class="form-label">Дата экскурсии:</label>
+                        <input type="date" class="form-control" id="dateInput">
+                    </div>
+                    <!-- Время начала -->
+                    <div class="mb-3">
+                        <label for="timeInput" class="form-label">Время начала:</label>
+                        <input type="time" class="form-control" id="timeInput" min="09:00" max="23:00" step="1800">
+                    </div>
+                    <!-- Длительность экскурсии -->
+                    <div class="mb-3">
+                        <label for="durationSelect" class="form-label">Длительность экскурсии:</label>
+                        <select class="form-select" id="durationSelect">
+                            <option selected>1 час</option>
+                            <option value="2">2 часа</option>
+                            <option value="3">3 часа</option>
+                        </select>
+                    </div>
+                    <!-- Количество человек -->
+                    <div class="mb-3">
+                        <label for="peopleInput" class="form-label">Количество человек:</label>
+                        <input type="number" class="form-control" id="peopleInput" min="1" max="20" value="1">
+                    </div>
+                    <!-- Дополнительные опции -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <label class="form-check-label" for="option1">
+                                    <input class="form-check-input" type="checkbox" id="option1">
+                                    <strong>Скидка для школьников</strong>
+                                </label>
+                                <p class="small text-muted mb-0">Уменьшает цену на 15%</p>
+                            </div>
+                            <div>
+                                <label class="form-check-label" for="option2">
+                                    <input class="form-check-input" type="checkbox" id="option2">
+                                    <strong>Тематические сувениры</strong>
+                                </label>
+                                <p class="small text-muted mb-0">Увеличивает цену на 500р/чел.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Итоговая стоимость -->
+                    <div class="mb-3 row">
+                        <label for="totalCost" class="col-sm-3 col-form-label">Стоимость:</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly class="form-control-plaintext" id="totalCost" value="0р">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                    <button type="button" class="btn btn-success" id="sendForm">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Подключение Bootstrap JavaScript для интерактивных компонентов -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <script src="codeMP.js"></script>
 </body>
 
 </html>

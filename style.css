@@ -8,22 +8,25 @@
     }
 
     .table {
-        font-size: 11px;
+        font-size: 10px;
         /* уменьшить размер шрифта */
     }
 
     .table th,
     .table td {
-        padding: 5px;
+        padding: 0px;
         /* уменьшить отступы в ячейках */
     }
-
 
 }
 
 body {
     font-family: Arial, sans-serif;
     background-color: #d5fae3;
+}
+
+.logo {
+    height: 70px;
 }
 
 .navbar-brand {
@@ -99,4 +102,3 @@ table button:before {
 table button:hover:before {
     width: 100%;
 }
-

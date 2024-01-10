@@ -27,8 +27,8 @@
     font-display: block;
     font-family: "bootstrap-icons";
     src: url("./fonts/bootstrap-icons.woff2?8d200481aa7f02a2d63a331fc782cfaf") format("woff2"),
-  url("./fonts/bootstrap-icons.woff?8d200481aa7f02a2d63a331fc782cfaf") format("woff");
-  }
+        url("./fonts/bootstrap-icons.woff?8d200481aa7f02a2d63a331fc782cfaf") format("woff");
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -96,6 +96,10 @@ table td {
     width: 100%;
 }
 
+.logo {
+    height: 70px;
+}
+
 .close {
     position: absolute;
     top: 10px;
@@ -118,17 +122,17 @@ td .btn-secondary {
     background-color: rgb(255, 175, 175);
     display: block;
     width: 100%;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     border-radius: 3px;
 }
 
 #deleteModal #peredumal {
-    background-color: rgb(175, 248, 179); 
+    background-color: rgb(175, 248, 179);
 }
 
 #editModal .modal-content label,
 #editModal .modal-content input {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 
 #editModal .modal-content button {

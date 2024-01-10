@@ -75,12 +75,18 @@ function closeModal() {
 // Функция для открытия модального окна редактирования
 function openEditModal() {
     // Заполнение полей редактирования данными из отображаемых элементов
-    document.getElementById('editFIO').value = document.getElementById('fio').innerText.slice(10).trim();
-    document.getElementById('editRoute').value = document.getElementById('route').innerText.slice(18).trim();
-    document.getElementById('editDataEcs').value = document.getElementById('dataEcs').innerText.slice(18).trim();
-    document.getElementById('editTimeEcs').value = document.getElementById('timeEcs').innerText.slice(18).trim();
-    document.getElementById('editDurationEcs').value = document.getElementById('durationEcs').innerText.slice(23).trim();
-    document.getElementById('editPeopleCnt').value = document.getElementById('PeoplesCnt').innerText.slice(23).trim();
+    document.getElementById('editFIO').value = 
+    document.getElementById('fio').innerText.slice(10).trim();
+    document.getElementById('editRoute').value =
+     document.getElementById('route').innerText.slice(18).trim();
+    document.getElementById('editDataEcs').value =
+     document.getElementById('dataEcs').innerText.slice(18).trim();
+    document.getElementById('editTimeEcs').value =
+     document.getElementById('timeEcs').innerText.slice(18).trim();
+    document.getElementById('editDurationEcs').value =
+     document.getElementById('durationEcs').innerText.slice(23).trim();
+    document.getElementById('editPeopleCnt').value =
+     document.getElementById('PeoplesCnt').innerText.slice(23).trim();
 
     // Отображение модального окна редактирования
     document.getElementById('editModal').style.display = 'flex';
@@ -103,12 +109,18 @@ function saveChanges() {
     editedCnt = document.getElementById('editPeopleCnt').value;
 
     // Обновление отображаемых элементов новыми данными
-    document.getElementById('fio').innerText = 'ФИО Гида: ' + editedFIO;
-    document.getElementById('route').innerText = 'Название маршрута: ' + editedRoute;
-    document.getElementById('dataEcs').innerText = 'Дата экскурсии: ' + editedData;
-    document.getElementById('timeEcs').innerText = 'Время начала: ' + editedTime;
-    document.getElementById('durationEcs').innerText = 'Длительность экскурсии: ' + editedDuration;
-    document.getElementById('PeoplesCnt').innerText = 'Количество человек: ' + editedCnt;
+    document.getElementById('fio').innerText = 
+    'ФИО Гида: ' + editedFIO;
+    document.getElementById('route').innerText = 
+    'Название маршрута: ' + editedRoute;
+    document.getElementById('dataEcs').innerText = 
+    'Дата экскурсии: ' + editedData;
+    document.getElementById('timeEcs').innerText = 
+    'Время начала: ' + editedTime;
+    document.getElementById('durationEcs').innerText = 
+    'Длительность экскурсии: ' + editedDuration;
+    document.getElementById('PeoplesCnt').innerText = 
+    'Количество человек: ' + editedCnt;
 
     // Закрытие модального окна редактирования
     closeEditModal();
