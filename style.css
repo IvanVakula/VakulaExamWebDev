@@ -2,22 +2,20 @@
 @media (max-width: 600px) {
     .table-responsive {
         margin: 0;
-        /* убрать отступы вокруг таблицы */
+        /* Убрать отступы вокруг таблицы */
         padding: 0;
-
     }
 
     .table {
         font-size: 10px;
-        /* уменьшить размер шрифта */
+        /* Уменьшить размер шрифта */
     }
 
     .table th,
     .table td {
         padding: 0px;
-        /* уменьшить отступы в ячейках */
+        /* Уменьшить отступы в ячейках */
     }
-
 }
 
 body {
@@ -30,7 +28,7 @@ body {
 }
 
 .navbar-brand {
-    /* более специфичный селектор */
+    /* Более специфичный селектор */
     background-color: #ce499d;
     border-radius: 5px;
     padding: 8px;
@@ -60,7 +58,6 @@ table {
     overflow: hidden;
     /* Скрывает содержимое, выходящее за пределы скругления */
 }
-
 
 table th {
     background-color: rgb(255, 134, 134) !important;
